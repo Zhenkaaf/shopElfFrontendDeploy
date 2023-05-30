@@ -1,19 +1,19 @@
 import styles from "./ProductCard.module.css";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
   return (
     <div className={styles.productCard}>
       <div className={styles.productCard__imgBody}>
         <img
-          src="https://roll-club.kh.ua/wp-content/uploads/2021/06/pizza.jpg"
+          src={product.imgUrl}
           alt="Product"
           className={styles.productCard__image}
         />
       </div>
 
-      <h3 className={styles.productCard__title}>Название товара</h3>
-      <p className={styles.productCard__price}>$99.99</p>
-      <button className={styles.productCard__button}>Добавить в корзину</button>
+      <h3 className={styles.productCard__title}>{product.name}</h3>
+      <p className={styles.productCard__price}>{product.price} $</p>
+      <button className={styles.productCard__button}>add to Cart</button>
     </div>
   );
 };

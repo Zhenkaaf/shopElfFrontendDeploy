@@ -15,7 +15,7 @@ const shopSlice = createSlice({
     selectShop: (state, action) => {
       const selectedShopName = action.payload;
       state.shops.forEach((shop) => {
-        shop.isActiveShop = shop.тфьу === selectedShopName;
+        shop.isActiveShop = shop.name === selectedShopName;
         shop.disabled = shop.isActiveShop ? false : true;
         state.isChooseOtherShopDisabled = false;
         state.selectedShopName = selectedShopName;

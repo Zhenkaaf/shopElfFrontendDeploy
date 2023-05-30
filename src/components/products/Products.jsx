@@ -3,20 +3,21 @@ import ProductCard from "../productCard/ProductCard";
 import styles from "./Products.module.css";
 
 const Products = () => {
-  const selectedShopId = useSelector((state) => state.shops.selectedShopId);
-  console.log(selectedShopId);
+  const selectedShopName = useSelector((state) => state.shops.selectedShopName);
+  const products = useSelector((state) => state.products.products);
+  console.log("products---", products);
+  console.log(selectedShopName);
 
   return (
     <div className={styles.products}>
-      {selectedShopId ? (
+      {selectedShopName ? (
         <div className={styles.products__body}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products.map((product) => (
+            <ProductCard
+              key={product._id}
+              product={product}
+            />
+          ))}
         </div>
       ) : (
         <div className={styles.empty}>Choose the shop !!!</div>

@@ -1,7 +1,7 @@
 import styles from "./Sidebar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectShop, resetShop } from "./../../store/shopSlice";
-import { fetchProducts } from "./../../store/productSlice";
+import { clearProducts, fetchProducts } from "./../../store/productSlice";
 import axios from "axios";
 
 const Sidebar = () => {
@@ -13,14 +13,15 @@ const Sidebar = () => {
     return state.shops.isChooseOtherShopDisabled;
   });
 
-  const handleShopSelect = (name) => {
+  const handleShopSelect = (shopName) => {
     console.log("work");
-    dispatch(selectShop(name));
-    dispatch(fetchProducts(name));
+    dispatch(selectShop(shopName));
+    dispatch(fetchProducts(shopName));
   };
 
   const handleReset = () => {
     dispatch(resetShop());
+    dispatch(clearProducts());
   };
 
   const testFn = async () => {

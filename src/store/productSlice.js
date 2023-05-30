@@ -3,10 +3,11 @@ import axios from "axios";
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async (shopId, { rejectWithValue }) => {
+  async (shopName, { rejectWithValue }) => {
+    console.log(shopName);
     try {
       const response = await axios.get(
-        "https://wicked-kit-slug.cyclic.app/pizzas"
+        `https://wicked-kit-slug.cyclic.app/${shopName}`
       );
       console.log(response);
       return response.data;
@@ -23,7 +24,11 @@ const productSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    clearProducts: (state) => {
+      state.products = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -43,6 +48,6 @@ const productSlice = createSlice({
   },
 });
 
-export const {} = productSlice.actions;
+export const { clearProducts } = productSlice.actions;
 
 export default productSlice.reducer;
