@@ -4,21 +4,21 @@ const shopSlice = createSlice({
   name: "shops",
   initialState: {
     shops: [
-      { isActiveShop: false, shopId: 1, name: "Mc Donny", disabled: false },
-      { isActiveShop: false, shopId: 2, name: "Pizza", disabled: false },
-      { isActiveShop: false, shopId: 3, name: "Sushi", disabled: false },
+      { isActiveShop: false, name: "donny", disabled: false },
+      { isActiveShop: false, name: "pizzas", disabled: false },
+      { isActiveShop: false, name: "sushi", disabled: false },
     ],
     isChooseOtherShopDisabled: true,
-    selectedShopId: null,
+    selectedShopName: null,
   },
   reducers: {
     selectShop: (state, action) => {
-      const selectedShopId = action.payload;
+      const selectedShopName = action.payload;
       state.shops.forEach((shop) => {
-        shop.isActiveShop = shop.shopId === selectedShopId;
+        shop.isActiveShop = shop.тфьу === selectedShopName;
         shop.disabled = shop.isActiveShop ? false : true;
         state.isChooseOtherShopDisabled = false;
-        state.selectedShopId = selectedShopId;
+        state.selectedShopName = selectedShopName;
       });
     },
     resetShop: (state) => {
@@ -26,7 +26,7 @@ const shopSlice = createSlice({
         shop.isActiveShop = false;
         shop.disabled = false;
         state.isChooseOtherShopDisabled = true;
-        state.selectedShopId = null;
+        state.selectedShopName = null;
       });
     },
   },

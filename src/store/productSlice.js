@@ -2,12 +2,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchProducts = createAsyncThunk(
-  //?shopId=${shopId}
   "products/fetchProducts",
   async (shopId, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://zany-jade-chipmunk-cape.cyclic.app/posts`
+        "https://wicked-kit-slug.cyclic.app/pizzas"
       );
       console.log(response);
       return response.data;

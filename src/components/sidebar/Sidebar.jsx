@@ -13,10 +13,10 @@ const Sidebar = () => {
     return state.shops.isChooseOtherShopDisabled;
   });
 
-  const handleShopSelect = (shopId) => {
+  const handleShopSelect = (name) => {
     console.log("work");
-    dispatch(selectShop(shopId));
-    dispatch(fetchProducts(shopId));
+    dispatch(selectShop(name));
+    dispatch(fetchProducts(name));
   };
 
   const handleReset = () => {
@@ -43,8 +43,8 @@ const Sidebar = () => {
       <div className={styles.shops}>
         {shops.map((shop) => (
           <button
-            key={shop.shopId}
-            onClick={() => handleShopSelect(shop.shopId)}
+            key={shop.name}
+            onClick={() => handleShopSelect(shop.name)}
             className={`${styles.shops__item} ${
               shop.isActiveShop ? styles.selectedShop : ""
             }`}
