@@ -1,0 +1,33 @@
+.menu {
+  padding: 0px 10px 0px 10px;
+  background-color: blue;
+}
+
+.menu__nav {
+}
+
+.menu__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu__item {
+  margin-right: 20px;
+  padding: 10px 0px 10px 0px;
+}
+
+.menu__item:hover {
+  color: #000;
+  background-color: yellow;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+.menu__link:hover {
+  color: #000;
+}

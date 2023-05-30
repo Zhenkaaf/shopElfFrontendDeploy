@@ -1,0 +1,18 @@
+.sidebar {
+  background-color: blue;
+  padding: 10px;
+  flex: 2;
+}
+
+.shops {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.shops__item {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.selectedShop {
+  background-color: yellow;
+}

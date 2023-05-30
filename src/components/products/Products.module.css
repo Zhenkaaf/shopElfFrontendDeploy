@@ -1,0 +1,20 @@
+.products {
+  flex: 10;
+  display: flex;
+  height: calc(100vh - 42px);
+  overflow: auto;
+}
+.products__body {
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.empty {
+  font-size: 32px;
+  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+}
