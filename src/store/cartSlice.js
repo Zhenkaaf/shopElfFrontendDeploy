@@ -8,7 +8,14 @@ export const submitOrderToDB = createAsyncThunk(
     try {
       const response = await axios.post(
         "https://wicked-kit-slug.cyclic.app/neworder",
-        orderData
+        orderData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST",
+          },
+        }
       );
       console.log("Order placed:", response.data);
     } catch (error) {
