@@ -7,6 +7,7 @@ export const fetchProducts = createAsyncThunk(
     try {
       const response = await axios.get(
         `https://wicked-kit-slug.cyclic.app/${shopName}`
+        /* `http://localhost:8001/${shopName}` */
       );
       console.log(response);
       return response.data;

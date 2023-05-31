@@ -2,20 +2,16 @@ import styles from "./Sidebar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectShop, resetShop } from "./../../store/shopSlice";
 import { clearProducts, fetchProducts } from "./../../store/productSlice";
-import axios from "axios";
 import { clearPrice } from "../../store/cartSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
   const shops = useSelector((state) => state.shops.shops);
-  const pro = useSelector((state) => state.products.products);
-  console.log("pro", pro);
   const isChooseOtherShopDisabled = useSelector((state) => {
     return state.shops.isChooseOtherShopDisabled;
   });
 
   const handleShopSelect = (shopName) => {
-    console.log("work");
     dispatch(selectShop(shopName));
     dispatch(fetchProducts(shopName));
   };
@@ -24,20 +20,6 @@ const Sidebar = () => {
     dispatch(resetShop());
     dispatch(clearProducts());
     dispatch(clearPrice());
-  };
-
-  const testFn = async () => {
-    console.log("testFnWork");
-    try {
-      /* const response = await axios.get("http://localhost:8001/pizzas"); */
-      const response = await axios.get(
-        "https://wicked-kit-slug.cyclic.app/pizzas"
-      );
-      const posts = response.data;
-      console.log("pizzas", posts); // Ваши данные о постах
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   return (
@@ -57,7 +39,6 @@ const Sidebar = () => {
           </button>
         ))}
       </div>
-      <button onClick={testFn}>TESTGET</button>
       <button
         onClick={handleReset}
         disabled={isChooseOtherShopDisabled}

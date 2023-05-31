@@ -4,22 +4,14 @@ import axios from "axios";
 export const submitOrderToDB = createAsyncThunk(
   "cart/submitOrderToDB",
   async (orderData, thunkAPI) => {
-    console.log("thunkGO");
     try {
       const response = await axios.post(
         "https://wicked-kit-slug.cyclic.app/neworder",
-        orderData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST",
-          },
-        }
+        orderData
       );
-      console.log("Order placed:", response.data);
+      return response.data;
     } catch (error) {
-      console.error("Error placing order:", error);
+      console.error("Error:", error);
     }
   }
 );
@@ -29,14 +21,9 @@ const cartSlice = createSlice({
   initialState: {
     orderList: [],
     totalPrice: 0,
-    clientData: {
-      name: "",
-      email: "",
-      phone: "",
-      address: "",
-    },
     loading: false,
     error: null,
+    yourOrderDB: null,
   },
   reducers: {
     addProduct: (state, action) => {
@@ -46,7 +33,6 @@ const cartSlice = createSlice({
       );
       if (existingProduct) {
         existingProduct.quantity += 1;
-        /*  existingProduct.price += existingProduct.price; */
       } else {
         state.orderList.push({ ...product, quantity: 1 });
       }
@@ -67,7 +53,7 @@ const cartSlice = createSlice({
       const { productId } = action.payload;
       const product = state.orderList.find((item) => item._id === productId);
       product.quantity += 1;
-      /*  product.price += product.price; */
+
       state.totalPrice += product.price;
     },
 
@@ -76,7 +62,6 @@ const cartSlice = createSlice({
       const product = state.orderList.find((item) => item._id === productId);
       if (product.quantity > 1) {
         product.quantity -= 1;
-        /*  product.price -= product.price; */
         state.totalPrice -= product.price;
       }
     },
@@ -88,6 +73,13 @@ const cartSlice = createSlice({
     clearOrderList: (state) => {
       state.orderList = [];
     },
+
+    clearYourOrderDB: (state) => {
+      if (state.yourOrderDB === null) {
+        return;
+      }
+      state.yourOrderDB = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -96,21 +88,15 @@ const cartSlice = createSlice({
         state.error = null;
       })
       .addCase(submitOrderToDB.fulfilled, (state, action) => {
+        state.yourOrderDB = action.payload;
         state.loading = false;
-        // Дополнительные действия после успешной отправки заказа
+
         state.orderList = [];
         state.totalPrice = 0;
-        state.clientData = {
-          name: "",
-          email: "",
-          phone: "",
-          address: "",
-        };
       })
       .addCase(submitOrderToDB.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        // Дополнительные действия при возникновении ошибки
       });
   },
 });
@@ -121,6 +107,7 @@ export const {
   decreaseQuantity,
   clearPrice,
   clearOrderList,
+  clearYourOrderDB,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

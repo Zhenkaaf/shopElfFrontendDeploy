@@ -46,6 +46,14 @@
 }
 
 .cart {
+}
+
+.processing {
+  font-size: 32px;
+  text-transform: uppercase;
+  padding: 50px;
+}
+.cartBody {
   display: flex;
 }
 .orderList {

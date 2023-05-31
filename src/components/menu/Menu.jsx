@@ -1,9 +1,11 @@
 import styles from "./Menu.module.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { clearYourOrderDB } from "../../store/cartSlice";
 
 const Menu = () => {
   const total = useSelector((state) => state.cart.totalPrice);
+  const dispatch = useDispatch();
   return (
     <div className={styles.menu}>
       <nav className={styles.menu__nav}>
@@ -12,6 +14,7 @@ const Menu = () => {
             <Link
               to="/"
               className={styles.menu__link}
+              onClick={() => dispatch(clearYourOrderDB())}
             >
               Shop
             </Link>
