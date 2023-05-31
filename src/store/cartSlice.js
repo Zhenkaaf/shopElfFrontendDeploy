@@ -4,8 +4,12 @@ import axios from "axios";
 export const submitOrderToDB = createAsyncThunk(
   "cart/submitOrderToDB",
   async (orderData, thunkAPI) => {
+    console.log("thunkGO");
     try {
-      const response = await axios.post("/api/neworder", orderData);
+      const response = await axios.post(
+        "https://wicked-kit-slug.cyclic.app/api/neworder",
+        orderData
+      );
       console.log("Order placed:", response.data);
     } catch (error) {
       console.error("Error placing order:", error);
