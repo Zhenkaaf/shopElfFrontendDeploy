@@ -7,7 +7,7 @@ export const submitOrderToDB = createAsyncThunk(
     console.log("thunkGO");
     try {
       const response = await axios.post(
-        "https://wicked-kit-slug.cyclic.app/api/neworder",
+        "https://wicked-kit-slug.cyclic.app/neworder",
         orderData
       );
       console.log("Order placed:", response.data);

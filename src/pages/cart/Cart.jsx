@@ -55,8 +55,8 @@ const Cart = () => {
     emailRef.current.value = "";
     phoneRef.current.value = "";
     addressRef.current.value = "";
-    dispatch(clearOrderList());
-    dispatch(clearPrice());
+    /* dispatch(clearOrderList());
+    dispatch(clearPrice()); */
   };
 
   return (
