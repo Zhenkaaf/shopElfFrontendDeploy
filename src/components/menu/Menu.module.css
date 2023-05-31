@@ -13,7 +13,8 @@
   display: flex;
 }
 
-.menu__item {
+.menu__item,
+.menu__itemPrice {
   margin-right: 20px;
   padding: 10px 0px 10px 0px;
 }
@@ -23,7 +24,8 @@
   background-color: yellow;
 }
 
-.menu__link {
+.menu__link,
+.menu__linkPrice {
   text-decoration: none;
   color: #fff;
   padding: 10px;

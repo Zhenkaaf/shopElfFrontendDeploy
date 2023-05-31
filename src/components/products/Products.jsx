@@ -5,22 +5,27 @@ import styles from "./Products.module.css";
 const Products = () => {
   const selectedShopName = useSelector((state) => state.shops.selectedShopName);
   const products = useSelector((state) => state.products.products);
-  console.log("products---", products);
-  console.log(selectedShopName);
+  const isLoading = useSelector((state) => state.products.isLoading);
 
   return (
     <div className={styles.products}>
-      {selectedShopName ? (
-        <div className={styles.products__body}>
-          {products.map((product) => (
-            <ProductCard
-              key={product._id}
-              product={product}
-            />
-          ))}
-        </div>
+      {isLoading ? (
+        <div className={styles.empty}>Loading...</div>
       ) : (
-        <div className={styles.empty}>Choose the shop !!!</div>
+        <div>
+          {selectedShopName ? (
+            <div className={styles.products__body}>
+              {products.map((product) => (
+                <ProductCard
+                  key={product._id}
+                  product={product}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className={styles.empty}>Choose the shop !!!</div>
+          )}
+        </div>
       )}
     </div>
   );

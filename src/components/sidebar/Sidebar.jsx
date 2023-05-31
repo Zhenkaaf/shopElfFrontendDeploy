@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectShop, resetShop } from "./../../store/shopSlice";
 import { clearProducts, fetchProducts } from "./../../store/productSlice";
 import axios from "axios";
+import { clearPrice } from "../../store/cartSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const Sidebar = () => {
   const handleReset = () => {
     dispatch(resetShop());
     dispatch(clearProducts());
+    dispatch(clearPrice());
   };
 
   const testFn = async () => {

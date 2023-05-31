@@ -3,6 +3,7 @@
   display: flex;
   height: calc(100vh - 42px);
   overflow: auto;
+  justify-content: center;
 }
 .products__body {
   flex-wrap: wrap;
@@ -16,5 +17,5 @@
   text-transform: uppercase;
   align-items: center;
   display: flex;
-  margin: 0 auto;
+  height: 100%;
 }
