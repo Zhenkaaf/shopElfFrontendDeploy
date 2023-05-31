@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/shopElfFrontendDeploy/static/css/main.09c2f07b.css",
-    "main.js": "/shopElfFrontendDeploy/static/js/main.bf76c2c1.js",
+    "main.css": "/shopElfFrontendDeploy/static/css/main.9c401c62.css",
+    "main.js": "/shopElfFrontendDeploy/static/js/main.8b993846.js",
     "static/js/787.28cb0dcd.chunk.js": "/shopElfFrontendDeploy/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/shopElfFrontendDeploy/index.html",
-    "main.09c2f07b.css.map": "/shopElfFrontendDeploy/static/css/main.09c2f07b.css.map",
-    "main.bf76c2c1.js.map": "/shopElfFrontendDeploy/static/js/main.bf76c2c1.js.map",
+    "main.9c401c62.css.map": "/shopElfFrontendDeploy/static/css/main.9c401c62.css.map",
+    "main.8b993846.js.map": "/shopElfFrontendDeploy/static/js/main.8b993846.js.map",
     "787.28cb0dcd.chunk.js.map": "/shopElfFrontendDeploy/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.09c2f07b.css",
-    "static/js/main.bf76c2c1.js"
+    "static/css/main.9c401c62.css",
+    "static/js/main.8b993846.js"
   ]
 }
