@@ -1,3 +1,31 @@
+
+
+Link to deployed project https://zhenkaaf.github.io/shopElfFrontendDeploy/
+
+
+Link to repositorie frontend and backend side  https://github.com/Zhenkaaf/shopElf
+
+
+I used React, Redux-toolkit, MongoDB, Mongoose, Express, backend is deployed at Cyclick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
