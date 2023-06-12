@@ -2,7 +2,7 @@ import styles from "./Sidebar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectShop, resetShop } from "./../../store/shopSlice";
 import { clearProducts, fetchProducts } from "./../../store/productSlice";
-import { clearPrice } from "../../store/cartSlice";
+import { clearPrice, clearOrderList } from "../../store/cartSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -20,6 +20,7 @@ const Sidebar = () => {
     dispatch(resetShop());
     dispatch(clearProducts());
     dispatch(clearPrice());
+    dispatch(clearOrderList());
   };
 
   return (
