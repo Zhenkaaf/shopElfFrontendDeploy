@@ -17,17 +17,17 @@ const shopSlice = createSlice({
       state.shops.forEach((shop) => {
         shop.isActiveShop = shop.name === selectedShopName;
         shop.disabled = shop.isActiveShop ? false : true;
-        state.isChooseOtherShopDisabled = false;
-        state.selectedShopName = selectedShopName;
       });
+      state.isChooseOtherShopDisabled = false;
+      state.selectedShopName = selectedShopName;
     },
     resetShop: (state) => {
       state.shops.forEach((shop) => {
         shop.isActiveShop = false;
         shop.disabled = false;
-        state.isChooseOtherShopDisabled = true;
-        state.selectedShopName = null;
       });
+      state.isChooseOtherShopDisabled = true;
+      state.selectedShopName = null;
     },
   },
 });

@@ -45,6 +45,7 @@ const cartSlice = createSlice({
       if (index !== -1) {
         const deletedProduct = state.orderList[index];
         state.totalPrice -= deletedProduct.price * deletedProduct.quantity;
+
         state.orderList.splice(index, 1);
       }
     },
@@ -53,7 +54,6 @@ const cartSlice = createSlice({
       const { productId } = action.payload;
       const product = state.orderList.find((item) => item._id === productId);
       product.quantity += 1;
-
       state.totalPrice += product.price;
     },
 
@@ -90,8 +90,8 @@ const cartSlice = createSlice({
       .addCase(submitOrderToDB.fulfilled, (state, action) => {
         state.yourOrderDB = action.payload;
         state.loading = false;
-
         state.orderList = [];
+
         state.totalPrice = 0;
       })
       .addCase(submitOrderToDB.rejected, (state, action) => {
