@@ -1,0 +1,90 @@
+.checkout {
+  display: flex;
+  background-color: bisque;
+}
+.checkout__left {
+  flex: 1;
+  min-height: calc(100vh - 42px);
+  padding: 20px;
+}
+
+.map {
+}
+.map__container {
+  min-height: 300px;
+  background-color: blueviolet;
+}
+.map__body {
+  background-image: url("https://www.pngall.com/wp-content/uploads/10/Map-Marker-PNG-Free-Download-180x180.png");
+  height: 200px;
+  width: 170px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form {
+  min-height: 300px;
+  margin-top: 30px;
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+}
+.form__body {
+}
+
+.form__title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+}
+.form__topRow {
+}
+
+.form__bottomRow {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form__field {
+  margin-bottom: 10px;
+}
+.form__field_bottom {
+  width: 300px;
+}
+.form__field_name {
+  margin-right: 10px;
+}
+
+.form__label {
+  margin-bottom: 5px;
+  text-align: start;
+}
+
+.form__input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* .form__button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 248px;
+  right: -720px;
+}
+
+.form__button:hover {
+  background-color: #45a049;
+} */
+
+.checkout__right {
+  flex: 1;
+  padding: 20px;
+}

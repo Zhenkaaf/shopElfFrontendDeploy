@@ -21,7 +21,7 @@ const Menu = () => {
           </li>
           <li className={styles.menu__item}>
             <Link
-              to="cart"
+              to="checkout"
               className={styles.menu__link}
             >
               Shopping Cart

@@ -1,5 +1,5 @@
 import { addProduct } from "../../store/cartSlice";
-import styles from "./ProductCard.module.css";
+import s from "./ProductCard.module.css";
 import { useDispatch } from "react-redux";
 
 const ProductCard = ({ product }) => {
@@ -9,19 +9,21 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className={styles.productCard}>
-      <div className={styles.productCard__imgBody}>
+    <div className={s.productCard}>
+      <div className={s.productCard__imgContainer}>
         <img
           src={product.imgUrl}
-          alt="Product"
-          className={styles.productCard__image}
+          alt="Product-photo"
+          className={s.productCard__image}
         />
       </div>
-      <p className={styles.productCard__price}>{product.price} $</p>
-      <h3 className={styles.productCard__title}>{product.name}</h3>
+      <p className={s.productCard__price}>
+        Price: <strong>{product.price}</strong> $
+      </p>
+      <h3 className={s.productCard__title}>{product.name}</h3>
 
       <button
-        className={styles.productCard__button}
+        className={s.productCard__button}
         onClick={handleAddToCart}
       >
         add to Cart

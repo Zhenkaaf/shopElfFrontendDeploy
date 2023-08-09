@@ -1,6 +1,6 @@
 import "./App.css";
 import Menu from "./components/menu/Menu";
-import Cart from "./pages/cart/Cart";
+import Checkout from "./pages/checkout/Checkout";
 import Home from "./pages/home/Home";
 import { Outlet, Routes, Route } from "react-router-dom";
 
@@ -26,8 +26,8 @@ function App() {
             element={<Home />}
           />
           <Route
-            path="cart"
-            element={<Cart />}
+            path="checkout"
+            element={<Checkout />}
           />
         </Route>
       </Routes>
